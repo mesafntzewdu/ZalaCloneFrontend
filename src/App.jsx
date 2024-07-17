@@ -44,7 +44,7 @@ function App() {
         style: { fontWeight: 'light' },
       });
     }
-  }, []);
+  }, [cookie]);
   return (
     <div className="font-Manrope">
       <Suspense
