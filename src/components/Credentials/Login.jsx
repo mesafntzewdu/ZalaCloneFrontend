@@ -57,7 +57,7 @@ const Login = () => {
         password,
       })
       .then((response) => {
-        return response.data;
+        return response?.data;
       })
       .then((res) => {
         if (res) {
@@ -67,10 +67,10 @@ const Login = () => {
           });
           dispatch(
             LOGIN({
-              id: res._id,
-              username: res.username,
-              profile: res.profile,
-              email: res.email,
+              id: res?._id,
+              username: res?.username,
+              profile: res?.profile,
+              email: res?.email,
             })
           );
           loginModal.setClose();
