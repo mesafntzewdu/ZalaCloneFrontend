@@ -75,7 +75,7 @@ const Input = ({
               >
                 <PhoneInput
                   id={id}
-                  defaultCountry={'US'}
+                  defaultCountry={'ET'}
                   value={field.value}
                   onChange={field.onChange}
                   onFocus={handleFocus}
