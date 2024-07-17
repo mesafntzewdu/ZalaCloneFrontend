@@ -1,26 +1,80 @@
 import React from 'react';
 const SwiperPerView = React.lazy(() => import('../../utils/SwiperPerView'));
 let FirstSlides = [
-  '/clients/first.png',
-  '/clients/second.png',
-  '/clients/third.png',
-  '/clients/fifth.png',
-  '/clients/six.png',
-  '/clients/seven.png',
-  '/clients/eight.png',
-  '/clients/nine.png',
-  '/clients/ten.png',
+  {
+    img: '/clients/first.png',
+    id: 1,
+  },
+  {
+    img: '/clients/second.png',
+    id: 2,
+  },
+  {
+    img: '/clients/third.png',
+    id: 3,
+  },
+  {
+    img: '/clients/fifth.png',
+    id: 4,
+  },
+  {
+    img: '/clients/six.png',
+    id: 5,
+  },
+  {
+    img: '/clients/seven.png',
+    id: 6,
+  },
+  {
+    img: '/clients/eight.png',
+    id: 7,
+  },
+  {
+    img: '/clients/nine.png',
+    id: 8,
+  },
+  {
+    img: '/clients/ten.png',
+    id: 9,
+  },
 ];
 let SecondSlides = [
-  '/clients2/first.png',
-  '/clients2/second.png',
-  '/clients2/third.png',
-  '/clients2/fifth.png',
-  '/clients2/seven.png',
-  '/clients2/eight.png',
-  '/clients2/nine.png',
-  '/clients2/ten.png',
-  '/clients2/eleven.png',
+  {
+    img: '/clients2/first.png',
+    id: 1,
+  },
+  {
+    img: '/clients2/second.png',
+    id: 2,
+  },
+  {
+    img: '/clients2/third.png',
+    id: 3,
+  },
+  {
+    img: '/clients2/fifth.png',
+    id: 4,
+  },
+  {
+    img: '/clients2/seven.png',
+    id: 5,
+  },
+  {
+    img: '/clients2/eight.png',
+    id: 6,
+  },
+  {
+    img: '/clients2/nine.png',
+    id: 7,
+  },
+  {
+    img: '/clients2/ten.png',
+    id: 8,
+  },
+  {
+    img: '/clients2/eleven.png',
+    id: 9,
+  },
 ];
 const SectionSix = () => {
   return (

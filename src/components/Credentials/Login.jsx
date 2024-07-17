@@ -7,7 +7,9 @@ const Input = React.lazy(() => import('./CredentialComponents/Input'));
 const Modal = React.lazy(() => import('./Modal'));
 import { useDispatch } from 'react-redux';
 import { LOGIN } from '../../Token/userSlice.jsx';
+import { useCookies } from 'react-cookie';
 const Login = () => {
+  let [_, setCookie] = useCookies();
   let {
     handleSubmit,
     formState: { errors, defaultValues },
@@ -73,6 +75,7 @@ const Login = () => {
               email: res?.email,
             })
           );
+          setCookie('token', res.token);
           loginModal.setClose();
         }
       })

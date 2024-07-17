@@ -76,7 +76,7 @@ const ThirdCards = () => {
       </div>
       <div className="flex items-start justify-center gap-6 py-10 flex-wrap w-[95%] md:w-[84%] mx-auto">
         {cards.map((card) => (
-          <ThirdCard info={card} />
+          <ThirdCard key={card.id} info={card} />
         ))}
       </div>
     </div>

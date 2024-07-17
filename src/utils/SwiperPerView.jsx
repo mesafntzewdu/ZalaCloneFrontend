@@ -13,9 +13,9 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import { useMediaQuery } from 'react-responsive';
 
 export default function SwiperPerView({ slides }) {
-    const isDesktopOrLaptop = useMediaQuery({
-      query: '(max-width: 700px)',
-    });
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(max-width: 700px)',
+  });
   return (
     <>
       <Swiper
@@ -39,8 +39,12 @@ export default function SwiperPerView({ slides }) {
       >
         {slides.map((slide) => {
           return (
-            <SwiperSlide key={slide} className="p-4 my-10">
-              <img src={slide} className="w-full h-full object-cover" alt="" />
+            <SwiperSlide key={slide.id} className="p-4 my-10">
+              <img
+                src={slide?.img}
+                className="w-full h-full object-cover"
+                alt=""
+              />
             </SwiperSlide>
           );
         })}

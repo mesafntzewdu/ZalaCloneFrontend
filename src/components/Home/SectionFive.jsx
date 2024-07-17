@@ -101,6 +101,7 @@ const SectionFive = () => {
           {SideButtons.map((buttons) => {
             return (
               <div
+                ke
                 onClick={() => {
                   setCurrent(buttons.href);
                   setInfo((prev) => ({ ...prev, title: buttons.title }));
