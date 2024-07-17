@@ -17,7 +17,7 @@ const Button = ({ label, onClick, disable }) => {
           color={'white'}
           loading={true}
           size={10}
-          height={19}
+          height={17}
           aria-label="Loading Spinner"
           data-testid="loader"
         />
