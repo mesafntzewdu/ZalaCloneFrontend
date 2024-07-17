@@ -35,16 +35,16 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  let [cookie, _] = useCookies(['token']);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    if (!cookie.length) {
-      dispatch(LOGOUT({}));
-      toast.success('Your session has expired!', {
-        style: { fontWeight: 'light' },
-      });
-    }
-  }, [cookie]);
+  // let [cookie, _] = useCookies(['token']);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   if (!cookie.length) {
+  //     dispatch(LOGOUT({}));
+  //     toast.success('Your session has expired!', {
+  //       style: { fontWeight: 'light' },
+  //     });
+  //   }
+  // }, [cookie]);
   return (
     <div className="font-Manrope">
       <Suspense
