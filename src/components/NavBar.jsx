@@ -317,9 +317,11 @@ const NavBar = () => {
         <ul
           className={`${
             dropdown
-              ? `${subMenuDrop.drop ? 'h-auto' : 'h-[400px]'} show`
+              ? `${subMenuDrop.drop ? 'h-auto' : 'h-[400px]'} ${
+                  drop ? 'h-[680px]' : 'h-0'
+                } show`
               : 'h-0 hide'
-          } ${drop ? 'h-[680px]' : 'h-0'} lg:hidden flex p-3 overflow-hidden transition-all ease-in-out duration-500 items-start justify-start gap-2 flex-col  w-full`}
+          } lg:hidden flex p-3 overflow-hidden transition-all ease-in-out duration-500 items-start justify-start gap-2 flex-col  w-full`}
         >
           {Links.map((link) => {
             return (
