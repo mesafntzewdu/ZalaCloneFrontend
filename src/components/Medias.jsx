@@ -47,6 +47,9 @@ const Medias = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(max-width: 1236px)',
   });
+  const isDesktopOrLaptop2 = useMediaQuery({
+    query: '(min-width: 1236px)',
+  });
   let { username, profile, email } = useSelector((state) => state.user);
   let [drop, setDrop] = useState(false);
   let dispatch = useDispatch();
@@ -92,7 +95,7 @@ const Medias = () => {
         )}
         <SearchBar open={open} setOpen={setOpen} />
       </div>
-      {username && (
+      {username && isDesktopOrLaptop2 && (
         <div className="flex relative items-center justify-center gap-2 rounded-md">
           <button
             onClick={() => setDrop((prev) => !prev)}
