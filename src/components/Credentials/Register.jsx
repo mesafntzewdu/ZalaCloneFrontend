@@ -25,7 +25,7 @@ const Register = () => {
     },
   });
   let Body = (
-    <div className="flex items-center justify-center w-full flex-wrap gap-3">
+    <div className="flex items-center justify-center w-full flex-wrap sm:flex-row flex-col gap-3">
       <Input
         control={control}
         required
@@ -34,7 +34,7 @@ const Register = () => {
         label={'Username'}
         id={'username'}
       />
-      <div className="flex items-start justify-start flex-col flex-1 gap-3 max-w-[100%]">
+      <div className="flex items-start justify-start flex-col flex-1 gap-3 w-full max-w-[100%]">
         <Input
           control={control}
           required
@@ -60,7 +60,7 @@ const Register = () => {
           id={'phoneNumber'}
         />
       </div>
-      <div className="flex items-start justify-start flex-col flex-1 gap-3 max-w-[100%]">
+      <div className="flex items-start justify-start flex-col flex-1 gap-3 w-full max-w-[100%]">
         <Input
           control={control}
           errors={errors}

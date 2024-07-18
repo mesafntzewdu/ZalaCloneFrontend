@@ -39,7 +39,7 @@ const Modal = ({
           openModal
             ? 'z-50 opacity-100 translate-y-0'
             : '-z-50 opacity-0 -translate-y-full'
-        }  xs:w-11/12 sm:w-9/12 md:w-7/12 lg:w-4/12 shadow-md shadow-gray-600 transition-all duration-500 ease-linear  transform origin-top relative  gap-3 flex justify-center items-center flex-col mx-auto p-5 bg-white rounded-lg`}
+        }  w-11/12 md:w-7/12 lg:w-4/12 shadow-md shadow-gray-600 transition-all duration-500 ease-linear  transform origin-top relative  gap-3 flex justify-center items-center flex-col mx-auto p-5 bg-white rounded-lg`}
       >
         <button
           onClick={handleClose}
