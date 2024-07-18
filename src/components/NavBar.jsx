@@ -318,7 +318,7 @@ const NavBar = () => {
           className={`${
             dropdown
               ? `${subMenuDrop.drop ? 'h-auto' : 'h-[400px]'} ${
-                  drop ? 'h-auto' : 'h-[395px]'
+                  drop ? 'h-auto' : 'h-[399px]'
                 } show`
               : 'h-0 hide'
           } lg:hidden flex p-3 overflow-hidden transition-all ease-in-out duration-500 items-start justify-start gap-2 flex-col  w-full`}
