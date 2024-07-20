@@ -53,41 +53,36 @@ const Login = () => {
   let onSubmit = async (data) => {
     let { user, password } = data;
     setLoading(true);
-    baseURL
-      .post(`/auth/login`, {
+    try {
+      const response = await baseURL.post(`/auth/login`, {
         user,
         password,
-      })
-      .then((response) => {
-        return response?.data;
-      })
-      .then((res) => {
-        if (res) {
-          reset({
-            user: '',
-            password: '',
-          });
-          dispatch(
-            LOGIN({
-              id: res?._id,
-              username: res?.username,
-              profile: res?.profile,
-              email: res?.email,
-            })
-          );
-          setCookie('token', res.token);
-          loginModal.setClose();
-        }
-      })
-      .catch((err) => {
-        setError(err.response.data.error);
-      })
-      .finally(() => {
-        setLoading(false);
-        setTimeout(() => {
-          setError('');
-        }, 5000);
       });
+      let res = await response.data;
+      if (res) {
+        reset({
+          user: '',
+          password: '',
+        });
+        dispatch(
+          LOGIN({
+            id: res?._id,
+            username: res?.username,
+            profile: res?.profile,
+            email: res?.email,
+          })
+        );
+        setCookie('token', res.token);
+        loginModal.setClose();
+      }
+    } catch (err) {
+      setError(err.response.data.error);
+    } finally {
+      setLoading(false);
+      setTimeout(() => {
+        setError('');
+      }, 5000);
+    }
   };
   let Footer = (
     <div className="flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-normalBlue">

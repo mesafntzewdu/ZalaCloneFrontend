@@ -31,6 +31,15 @@ const Register = () => {
         required
         errors={errors}
         register={register}
+        id={'image'}
+        type={'file'}
+        name={'file'}
+      />
+      <Input
+        control={control}
+        required
+        errors={errors}
+        register={register}
         label={'Username'}
         id={'username'}
       />
@@ -89,6 +98,15 @@ const Register = () => {
           id={'confirm'}
         />
       </div>
+      <Input
+        control={control}
+        required
+        errors={errors}
+        register={register}
+        id={'file'}
+        type={'file'}
+        name={'file'}
+      />
     </div>
   );
   let registerModal = useRegister();
@@ -102,42 +120,49 @@ const Register = () => {
   let [loading, setLoading] = useState(false);
   let [error, setError] = useState('');
   let onSubmit = async (data) => {
-    let { username, password, firstName, lastName, phoneNumber, email } = data;
+    let {
+      username,
+      password,
+      firstName,
+      lastName,
+      phoneNumber,
+      email,
+      file,
+      image,
+    } = data;
     setLoading(true);
-    baseURL
-      .post(`/auth/register`, {
-        username,
-        password,
-        email,
-        lastName,
-        firstName,
-        phoneNumber,
-      })
-      .then((response) => {
-        return response.data;
-      })
-      .then((res) => {
-        if (res) {
-          reset({
-            username: '',
-            password: '',
-            email: '',
-            lastName: '',
-            confirm: '',
-            phoneNumber: '',
-          });
-          handleAuth();
-        }
-      })
-      .catch((err) => {
-        setError(err.response.data.error);
-      })
-      .finally(() => {
-        setLoading(false);
-        setTimeout(() => {
-          setError('');
-        }, 5000);
-      });
+    try {
+      let formData = new FormData();
+      formData.append('username', username);
+      formData.append('password', password);
+      formData.append('firstName', firstName);
+      formData.append('lastName', lastName);
+      formData.append('phoneNumber', phoneNumber);
+      formData.append('email', email);
+      formData.append('image', image[0]); // Handle file input
+      formData.append('file', file[0]);
+      let response = await baseURL.post(`/auth/register`, formData);
+      let res = await response.data;
+      if (res) {
+        handleAuth();
+        reset({
+          username: '',
+          email: '',
+          password: '',
+          confirm: '',
+          firstName: '',
+          lastName: '',
+        });
+      }
+      console.log(data);
+    } catch (err) {
+      setError(err.response.data.error);
+    } finally {
+      setLoading(false);
+      setTimeout(() => {
+        setError('');
+      }, 5000);
+    }
   };
   let Footer = (
     <div className="flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-normalBlue">
